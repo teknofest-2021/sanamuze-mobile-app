@@ -42,7 +42,7 @@ expo start  # you can also use: npm start
 * **Fehmi Şener** - [Github](https://github.com/fehmiisener)
 * **Ramazan Kaan Yarayan** - [Github](https://github.com/rknyryn)
 
-See also the list of [contributors](https://github.com/teknofest-2021/similarity-rate-api/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/teknofest-2021/sanamuze-mobile-app/contributors) who participated in this project.
 
 ## Acknowledgments
 
