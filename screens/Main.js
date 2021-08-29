@@ -16,6 +16,7 @@ import { BarCodeScanner } from "expo-barcode-scanner";
 import * as ImagePicker from "expo-image-picker";
 
 const FontSize = require("../assets/styles/FontSize");
+const Colors = require("../assets/styles/Colors");
 const defaultImage =
   "https://raw.githubusercontent.com/rknyryn/Sanamuze/main/assets/defaultWelcomeScreenImage.jpg?token=ASPREERB2FLK6OQVIEFQNCTBGK2EU";
 
@@ -196,7 +197,7 @@ export default function Main({ navigation }) {
         }}
       >
         <Text
-          style={{ color: "#FFFFFF", fontSize: FontSize.normalizeFont(14) }}
+          style={{ color: Colors.textPrimary, fontSize: FontSize.normalizeFont(14) }}
         >
           Karşılaştır
         </Text>
@@ -220,7 +221,7 @@ export default function Main({ navigation }) {
                   marginTop: "15%",
                   width: "70%",
                   height: "10%",
-                  backgroundColor: "#151515" + "AA",
+                  backgroundColor: Colors.seconday,
                   borderRadius: 12,
                   alignItems: "center",
                   justifyContent: "center",
@@ -228,7 +229,7 @@ export default function Main({ navigation }) {
               >
                 <Text
                   style={{
-                    color: "#FFFFFF",
+                    color: Colors.textPrimary,
                     fontSize: FontSize.normalizeFont(16),
                   }}
                 >
@@ -247,7 +248,7 @@ export default function Main({ navigation }) {
                 <Ionicons
                   name="scan"
                   size={FontSize.normalizeFont(220)}
-                  color="#FFFFFF"
+                  color={Colors.iconSecondary}
                 />
               </View>
 
@@ -258,14 +259,14 @@ export default function Main({ navigation }) {
                   height: "7%",
                   alignItems: "center",
                   justifyContent: "center",
-                  backgroundColor: "#151515" + "AA",
+                  backgroundColor: Colors.seconday,
                   borderRadius: 12,
                 }}
               >
                 <TouchableOpacity onPress={() => setModalOpenQR(false)}>
                   <Text
                     style={{
-                      color: "#FFFFFF",
+                      color: Colors.textPrimary,
                       fontSize: FontSize.normalizeFont(16),
                       fontWeight: "bold",
                     }}
@@ -295,7 +296,7 @@ export default function Main({ navigation }) {
             onPress={showImagePickerCamera}
           >
             <Text
-              style={{ color: "#FFFFFF", fontSize: FontSize.normalizeFont(14) }}
+              style={{ color: Colors.textPrimary, fontSize: FontSize.normalizeFont(14) }}
             >
               Kamera
             </Text>
@@ -305,7 +306,7 @@ export default function Main({ navigation }) {
             onPress={showImagePickerMediaLibrary}
           >
             <Text
-              style={{ color: "#FFFFFF", fontSize: FontSize.normalizeFont(14) }}
+              style={{ color: Colors.textPrimary, fontSize: FontSize.normalizeFont(14) }}
             >
               Galeri
             </Text>
@@ -313,12 +314,12 @@ export default function Main({ navigation }) {
           <TouchableOpacity
             style={[
               styles.modalButton,
-              { backgroundColor: "red", borderColor: "red" },
+              { backgroundColor: Colors.danger },
             ]}
             onPress={() => setmodalOpenCG(false)}
           >
             <Text
-              style={{ color: "#FFFFFF", fontSize: FontSize.normalizeFont(14) }}
+              style={{ color: Colors.textPrimary, fontSize: FontSize.normalizeFont(14) }}
             >
               İptal
             </Text>
@@ -352,12 +353,12 @@ export default function Main({ navigation }) {
             }}
           >
             <TouchableOpacity
-              style={[styles.modalButton2, { backgroundColor: "red" }]}
+              style={[styles.modalButton2, { backgroundColor: Colors.danger }]}
               onPress={() => setModalOpenSI(false)}
             >
               <Text
                 style={{
-                  color: "#FFFFFF",
+                  color: Colors.textPrimary,
                   fontSize: FontSize.normalizeFont(14),
                 }}
               >
@@ -370,7 +371,7 @@ export default function Main({ navigation }) {
             >
               <Text
                 style={{
-                  color: "#FFFFFF",
+                  color: Colors.textPrimary,
                   fontSize: FontSize.normalizeFont(14),
                 }}
               >
@@ -389,7 +390,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#FFFFFF",
+    backgroundColor: Colors.primary,
   },
   image: {
     height: "80%",
@@ -401,23 +402,23 @@ const styles = StyleSheet.create({
     marginTop: "5%",
     height: "7%",
     width: "80%",
-    backgroundColor: "#151515" + "DD",
+    backgroundColor: Colors.seconday,
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 12,
     borderWidth: 0.3,
-    borderColor: "#FFFFFF"
+    borderColor: Colors.primary
   },
   modal: {
     width: "100%",
     height: "30%",
-    backgroundColor: "#FFFFFF",
+    backgroundColor: Colors.primary,
     borderRadius: 12,
   },
   modalSI: {
     width: "90%",
     height: "90%",
-    backgroundColor: "#FFFFFF",
+    backgroundColor: Colors.primary,
     borderRadius: 12,
   },
   modalButton: {
@@ -427,13 +428,13 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#0ca454",
+    backgroundColor: Colors.accept,
   },
   modalButton2: {
     marginTop: "1%",
     height: "60%",
     width: "40%",
-    backgroundColor: "#0ca454",
+    backgroundColor: Colors.accept,
     borderRadius: 12,
     alignItems: "center",
     justifyContent: "center",

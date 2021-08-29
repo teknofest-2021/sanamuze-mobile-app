@@ -12,6 +12,7 @@ import { useFonts } from "expo-font";
 import AppLoading from "expo-app-loading";
 
 const FontSize = require("../assets/styles/FontSize");
+const Colors = require("../assets/styles/Colors");
 const Logo = require("../assets/logo.png");
 
 export default function Welcome({ navigation }) {
@@ -45,7 +46,7 @@ export default function Welcome({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: Colors.primary,
     alignItems: "center",
     justifyContent: "center",
   },
@@ -68,13 +69,13 @@ const styles = StyleSheet.create({
   button: {
     width: "90%",
     height: "6%",
-    backgroundColor: "#0ca454",
+    backgroundColor: Colors.accept,
     borderRadius: 12,
     alignItems: "center",
     justifyContent: "center",
   },
   buttonText: {
-    color: "#FFFFFF",
+    color: Colors.textPrimary,
     fontSize: FontSize.normalizeFont(18),
     fontWeight: "bold"
   },
