@@ -3,18 +3,21 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
+
 import { useFonts } from "expo-font";
 import AppLoading from "expo-app-loading";
 
 import Welcome from "./screens/Welcome";
 import Main from "./screens/Main";
 
-const FontSize = require("./assets/styles/FontSize")
+const FontSize = require("./assets/styles/FontSize");
+const Colors = require("./assets/styles/Colors");
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   const [loaded] = useFonts({
     GreatVibes: require("./assets/styles/Fonts/GreatVibes-Regular.ttf"),
+    Audiowide: require("./assets/styles/Fonts/Audiowide-Regular.ttf"),
   });
 
   if (!loaded) {
@@ -23,7 +26,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <StatusBar style="auto" />
+      <StatusBar style="light" />
       <Stack.Navigator initialRouteName="Welcome">
         <Stack.Screen
           options={{ headerShown: false }}
@@ -32,10 +35,15 @@ export default function App() {
         />
         <Stack.Screen
           options={{
-            headerTitle: " SanAmuze ",
+            headerTitle: "SANAMUZE",
+            headerStyle: {
+              backgroundColor: Colors.seconday,
+            },
+            headerTintColor: "#FFFFFF",
             headerTitleStyle: {
-              fontFamily: "GreatVibes",
-              fontSize: FontSize.normalizeFont(28)
+              fontFamily: "Audiowide",
+              fontSize: FontSize.normalizeFont(20),
+              color: "#FFFFFF"
             }
           }}
           name="Main"
