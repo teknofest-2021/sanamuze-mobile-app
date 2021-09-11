@@ -87,6 +87,8 @@ export default function Main({ navigation }) {
     // console.info("[INFO]--[handleQRScanned]- : " + scannedImage + "-[FUNCTION]");
   };
 
+  //------------------- QR END -----------------
+
   React.useLayoutEffect(() => {
     navigation.setOptions({
       headerRight: () => (
@@ -96,7 +98,11 @@ export default function Main({ navigation }) {
             setModalOpenQR(true);
           }}
         >
-          <Ionicons name="qr-code-outline" size={FontSize.normalizeFont(28)} color={"#151515"}/>
+          <Ionicons
+            name="qr-code-outline"
+            size={FontSize.normalizeFont(28)}
+            color={Colors.primary}
+          />
         </TouchableOpacity>
       ),
     });
@@ -150,6 +156,8 @@ export default function Main({ navigation }) {
     }
   };
 
+  //------------------- CAMERA/GALLERY END -----------------
+
   const getSimilaritiyRateFromImage = () => {
     // console.info(
     //   "[INFO]--[getSimilaritiyRateFromImage]-#############################-[FUNCTION]"
@@ -187,6 +195,8 @@ export default function Main({ navigation }) {
           resizeMode="cover"
         />
       </View>
+      {/* BACKGROUND END */}
+      
       <Image resizeMode="cover" style={styles.image} source={{ uri: image }} />
       <TouchableOpacity
         style={styles.button}
@@ -197,7 +207,10 @@ export default function Main({ navigation }) {
         }}
       >
         <Text
-          style={{ color: Colors.textPrimary, fontSize: FontSize.normalizeFont(14) }}
+          style={{
+            color: Colors.textPrimary,
+            fontSize: FontSize.normalizeFont(14),
+          }}
         >
           Karşılaştır
         </Text>
@@ -221,7 +234,7 @@ export default function Main({ navigation }) {
                   marginTop: "15%",
                   width: "70%",
                   height: "10%",
-                  backgroundColor: Colors.seconday,
+                  backgroundColor: Colors.seconday + "AA",
                   borderRadius: 12,
                   alignItems: "center",
                   justifyContent: "center",
@@ -259,7 +272,7 @@ export default function Main({ navigation }) {
                   height: "7%",
                   alignItems: "center",
                   justifyContent: "center",
-                  backgroundColor: Colors.seconday,
+                  backgroundColor: Colors.seconday + "AA",
                   borderRadius: 12,
                 }}
               >
@@ -279,6 +292,7 @@ export default function Main({ navigation }) {
           </BarCodeScanner>
         </View>
       </ModalBox>
+      {/* QR-SCANNER MODAL END */}
 
       {/* CAMERA/GALLERY MODAL */}
       <ModalBox
@@ -296,7 +310,10 @@ export default function Main({ navigation }) {
             onPress={showImagePickerCamera}
           >
             <Text
-              style={{ color: Colors.textPrimary, fontSize: FontSize.normalizeFont(14) }}
+              style={{
+                color: Colors.textPrimary,
+                fontSize: FontSize.normalizeFont(14),
+              }}
             >
               Kamera
             </Text>
@@ -306,26 +323,30 @@ export default function Main({ navigation }) {
             onPress={showImagePickerMediaLibrary}
           >
             <Text
-              style={{ color: Colors.textPrimary, fontSize: FontSize.normalizeFont(14) }}
+              style={{
+                color: Colors.textPrimary,
+                fontSize: FontSize.normalizeFont(14),
+              }}
             >
               Galeri
             </Text>
           </TouchableOpacity>
           <TouchableOpacity
-            style={[
-              styles.modalButton,
-              { backgroundColor: Colors.danger },
-            ]}
+            style={[styles.modalButton, { backgroundColor: Colors.danger }]}
             onPress={() => setmodalOpenCG(false)}
           >
             <Text
-              style={{ color: Colors.textPrimary, fontSize: FontSize.normalizeFont(14) }}
+              style={{
+                color: Colors.textPrimary,
+                fontSize: FontSize.normalizeFont(14),
+              }}
             >
               İptal
             </Text>
           </TouchableOpacity>
         </View>
       </ModalBox>
+      {/* CAMERA/GALLERY MODAL */}
 
       {/* SEND IMAGE MODAL */}
       <ModalBox
@@ -381,6 +402,7 @@ export default function Main({ navigation }) {
           </View>
         </View>
       </ModalBox>
+      {/* SEND IMAGE MODAL END */}
     </SafeAreaView>
   );
 }
@@ -396,7 +418,7 @@ const styles = StyleSheet.create({
     height: "80%",
     width: "80%",
     borderRadius: 12,
-    alignSelf: "center"
+    alignSelf: "center",
   },
   button: {
     marginTop: "5%",
@@ -407,7 +429,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     borderRadius: 12,
     borderWidth: 0.3,
-    borderColor: Colors.primary
+    borderColor: Colors.primary,
   },
   modal: {
     width: "100%",
@@ -428,7 +450,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: Colors.accept,
+    backgroundColor: Colors.seconday,
   },
   modalButton2: {
     marginTop: "1%",

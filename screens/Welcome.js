@@ -7,6 +7,7 @@ import {
   StyleSheet,
   TouchableOpacity,
 } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
 
 import { useFonts } from "expo-font";
 import AppLoading from "expo-app-loading";
@@ -17,7 +18,7 @@ const Logo = require("../assets/logo.png");
 
 export default function Welcome({ navigation }) {
   const [loaded] = useFonts({
-    GreatVibes: require("../assets/styles/Fonts/GreatVibes-Regular.ttf"),
+    Audiowide: require("../assets/styles/Fonts/Audiowide-Regular.ttf"),
   });
 
   if (!loaded) {
@@ -26,19 +27,21 @@ export default function Welcome({ navigation }) {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Image resizeMode="contain" style={styles.logo} source={Logo} />
-      <Text style={styles.title}> SanAmuze </Text>
-      <Text style={styles.description}>
-        Bu uyguluma aracılığı ile SanAmuze'de bulunan eserler ile çizimlerinizi
-        karşılaştırabilirsin. Tek yapman gereken QR kodunu okutup, çizimini
-        göndermek.
-      </Text>
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => navigation.navigate("Main")}
-      >
-        <Text style={styles.buttonText}>BAŞLA</Text>
-      </TouchableOpacity>
+      <LinearGradient colors={["#101010", "#252525", "#404040"]} style={styles.gradient}>
+        <Image resizeMode="contain" style={styles.logo} source={Logo} />
+        <Text style={styles.title}> SAN<Text style={[styles.title, {color: Colors.accept}]}>A</Text>MUZE </Text>
+        <Text style={styles.description}>
+          Bu uyguluma aracılığı ile SanAmuze'de bulunan eserler ile
+          çizimlerini karşılaştırabilirsin. Tek yapman gereken QR kodunu
+          okutup, çizimini göndermek.
+        </Text>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => navigation.navigate("Main")}
+        >
+          <Text style={styles.buttonText}>BAŞLA</Text>
+        </TouchableOpacity>
+      </LinearGradient>
     </SafeAreaView>
   );
 }
@@ -46,7 +49,13 @@ export default function Welcome({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.primary,
+    backgroundColor: Colors.seconday,
+    // alignItems: "center",
+    // justifyContent: "center",
+  },
+  gradient: {
+    width: "100%",
+    height: "100%",
     alignItems: "center",
     justifyContent: "center",
   },
@@ -56,8 +65,9 @@ const styles = StyleSheet.create({
   },
   title: {
     marginTop: "5%",
-    fontSize: FontSize.normalizeFont(50),
-    fontFamily: "GreatVibes",
+    fontSize: FontSize.normalizeFont(45),
+    fontFamily: "Audiowide",
+    color: Colors.textPrimary
   },
   description: {
     textAlign: "center",
@@ -65,6 +75,7 @@ const styles = StyleSheet.create({
     marginRight: "5%",
     marginBottom: "5%",
     fontSize: FontSize.normalizeFont(14),
+    color: Colors.textSecondary
   },
   button: {
     width: "90%",
@@ -77,6 +88,6 @@ const styles = StyleSheet.create({
   buttonText: {
     color: Colors.textPrimary,
     fontSize: FontSize.normalizeFont(18),
-    fontWeight: "bold"
+    fontWeight: "bold",
   },
 });
