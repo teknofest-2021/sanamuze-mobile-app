@@ -15,7 +15,6 @@ const Stack = createNativeStackNavigator();
 
 export default function App() {
   const [loaded] = useFonts({
-    GreatVibes: require("./assets/styles/Fonts/GreatVibes-Regular.ttf"),
     Audiowide: require("./assets/styles/Fonts/Audiowide-Regular.ttf"),
   });
 

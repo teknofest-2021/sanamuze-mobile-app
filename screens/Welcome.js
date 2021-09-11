@@ -18,7 +18,6 @@ const Logo = require("../assets/logo.png");
 
 export default function Welcome({ navigation }) {
   const [loaded] = useFonts({
-    GreatVibes: require("../assets/styles/Fonts/GreatVibes-Regular.ttf"),
     Audiowide: require("../assets/styles/Fonts/Audiowide-Regular.ttf"),
   });
 
