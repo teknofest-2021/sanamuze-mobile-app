@@ -195,6 +195,8 @@ export default function Main({ navigation }) {
           resizeMode="cover"
         />
       </View>
+      {/* BACKGROUND END */}
+      
       <Image resizeMode="cover" style={styles.image} source={{ uri: image }} />
       <TouchableOpacity
         style={styles.button}
@@ -232,7 +234,7 @@ export default function Main({ navigation }) {
                   marginTop: "15%",
                   width: "70%",
                   height: "10%",
-                  backgroundColor: Colors.seconday,
+                  backgroundColor: Colors.seconday + "AA",
                   borderRadius: 12,
                   alignItems: "center",
                   justifyContent: "center",
@@ -270,7 +272,7 @@ export default function Main({ navigation }) {
                   height: "7%",
                   alignItems: "center",
                   justifyContent: "center",
-                  backgroundColor: Colors.seconday,
+                  backgroundColor: Colors.seconday + "AA",
                   borderRadius: 12,
                 }}
               >
@@ -290,6 +292,7 @@ export default function Main({ navigation }) {
           </BarCodeScanner>
         </View>
       </ModalBox>
+      {/* QR-SCANNER MODAL END */}
 
       {/* CAMERA/GALLERY MODAL */}
       <ModalBox
@@ -343,6 +346,7 @@ export default function Main({ navigation }) {
           </TouchableOpacity>
         </View>
       </ModalBox>
+      {/* CAMERA/GALLERY MODAL */}
 
       {/* SEND IMAGE MODAL */}
       <ModalBox
@@ -398,6 +402,7 @@ export default function Main({ navigation }) {
           </View>
         </View>
       </ModalBox>
+      {/* SEND IMAGE MODAL END */}
     </SafeAreaView>
   );
 }

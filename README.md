@@ -2,8 +2,13 @@
 
 This is a SanAmuze mobile app. You can compare two photos and get the similarity rate.
 
-<img src="screenshots/1.jpeg" width="200"> <img src="screenshots/2.jpeg" width="200"> <img src="screenshots/3.jpeg" width="200">  <img src="screenshots/4.jpeg" width="200">
-<img src="screenshots/5.jpeg" width="200"> <img src="screenshots/6.jpeg" width="200"> <img src="screenshots/7.jpeg" width="200">
+<img src="screenshots/1.jpeg" width="200">
+<img src="screenshots/2.jpeg" width="200"> 
+<img src="screenshots/3.jpeg" width="200">
+<img src="screenshots/4.jpeg" width="200">
+<img src="screenshots/5.jpeg" width="200"> 
+<img src="screenshots/6.jpeg" width="200">
+<img src="screenshots/7.jpeg" width="200">
 
 ## Getting Started
 

@@ -3,7 +3,6 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-
 import { useFonts } from "expo-font";
 import AppLoading from "expo-app-loading";
 
@@ -26,7 +25,13 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <StatusBar style="light" />
+      <StatusBar
+        translucent={true}
+        backgroundColor={"#181818"}
+        style={
+          "light"
+        }
+      />
       <Stack.Navigator initialRouteName="Welcome">
         <Stack.Screen
           options={{ headerShown: false }}
@@ -43,8 +48,8 @@ export default function App() {
             headerTitleStyle: {
               fontFamily: "Audiowide",
               fontSize: FontSize.normalizeFont(20),
-              color: "#FFFFFF"
-            }
+              color: "#FFFFFF",
+            },
           }}
           name="Main"
           component={Main}

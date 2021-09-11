@@ -28,12 +28,12 @@ export default function Welcome({ navigation }) {
 
   return (
     <SafeAreaView style={styles.container}>
-      <LinearGradient colors={["#101010", "#353535"]} style={styles.gradient}>
+      <LinearGradient colors={["#101010", "#252525", "#404040"]} style={styles.gradient}>
         <Image resizeMode="contain" style={styles.logo} source={Logo} />
         <Text style={styles.title}> SAN<Text style={[styles.title, {color: Colors.accept}]}>A</Text>MUZE </Text>
         <Text style={styles.description}>
           Bu uyguluma aracılığı ile SanAmuze'de bulunan eserler ile
-          çizimlerinizi karşılaştırabilirsin. Tek yapman gereken QR kodunu
+          çizimlerini karşılaştırabilirsin. Tek yapman gereken QR kodunu
           okutup, çizimini göndermek.
         </Text>
         <TouchableOpacity
