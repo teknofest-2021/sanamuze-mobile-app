@@ -17,8 +17,9 @@ import * as ImagePicker from "expo-image-picker";
 
 const FontSize = require("../assets/styles/FontSize");
 const Colors = require("../assets/styles/Colors");
-const defaultImage =
-  "https://raw.githubusercontent.com/rknyryn/Sanamuze/main/assets/defaultWelcomeScreenImage.jpg?token=ASPREERB2FLK6OQVIEFQNCTBGK2EU";
+
+import DefaultImage from "../assets/defaultWelcomeScreenImage.jpg";
+const DEFAULT_IMAGE = Image.resolveAssetSource(DefaultImage).uri;
 
 export default function Main({ navigation }) {
   const [canOpen, setcanOpen] = useState(false);
@@ -29,7 +30,7 @@ export default function Main({ navigation }) {
 
   const [scannedImage, setScannedImage] = useState("");
   const [choosedImage, setChoosedImage] = useState("");
-  const [image, setImage] = useState(defaultImage);
+  const [image, setImage] = useState(DEFAULT_IMAGE);
 
   const createAlert = (msg) => {
     Alert.alert("SanAmuze", msg, [{ text: "Tamam" }], { cancelable: true });
@@ -179,7 +180,7 @@ export default function Main({ navigation }) {
       .then((response) => response.json())
       .then((result) => {
         setModalOpenSI(false);
-        createAlert("Benzerlik Oranı: " + result.similarityRate);
+        createAlert("Benzerlik Oranı: " + result.similarityRate+"%");
       })
       .catch((error) => console.log("error", error));
   };
